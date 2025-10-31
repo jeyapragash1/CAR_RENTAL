@@ -21,7 +21,7 @@ class Rental extends Model
     // Relationships
     public function customer()
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(\App\Models\User::class, 'customer_id');
     }
 
     public function vehicle()

@@ -16,7 +16,7 @@ class RentalController extends Controller
         // Validate request (remove total_amount)
         $validator = Validator::make($request->all(), [
             'vehicle_id' => 'required|exists:vehicles,id',
-            'customer_id' => 'required|exists:customers,id',
+            'customer_id' => 'required|exists:users,id',
             'rent_start_date' => 'required|date|before_or_equal:rent_end_date',
             'rent_end_date' => 'required|date|after_or_equal:rent_start_date',
         ]);
